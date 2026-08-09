@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: BB backport provenance source
+    conditions:
+      - merged
+      - title = BB backport naming positive
+    actions:
+      backport:
+        branches:
+          - release-bb
+        title: "BB naming positive (backport #{{ number }})"
