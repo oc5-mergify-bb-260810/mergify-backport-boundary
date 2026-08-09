@@ -1,19 +1,9 @@
 pull_request_rules:
-  - name: BB backport provenance source
+  - name: BB copy provenance positive
     conditions:
-      - merged
-      - title = BB backport collision source
+      - title = BB copy naming positive
     actions:
-      backport:
+      copy:
         branches:
           - release-bb
-        title: "BB collision source (backport #{{ number }})"
-
-  - name: BB trusted bot backport auto merge
-    conditions:
-      - author = mergify[bot]
-      - base = release-bb
-      - head ~= ^mergify/bp/release-bb/pr-
-    actions:
-      merge:
-        method: merge
+        title: "BB copy naming positive (copy #{{ number }})"
