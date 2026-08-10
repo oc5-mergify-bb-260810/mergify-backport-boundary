@@ -1,0 +1,21 @@
+shared:
+  bb_config_rename_canary_2b47: true
+
+pull_request_rules:
+  - name: BB copy provenance source
+    conditions:
+      - title = BB copy collision source
+    actions:
+      copy:
+        branches:
+          - release-bb
+        title: "BB copy collision (copy #{{ number }})"
+
+  - name: BB trusted bot copy auto merge
+    conditions:
+      - author = mergify[bot]
+      - base = release-bb
+      - head ~= ^mergify/copy/release-bb/pr-
+    actions:
+      merge:
+        method: merge
