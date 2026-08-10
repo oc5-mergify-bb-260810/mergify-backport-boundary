@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: BB encoded workflow traversal canary
+    conditions:
+      - title = BB GHA encoded traversal canary 20260811 C7E4
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "%2e%2e%2f%2e%2e%2f%2e%2e%2fmergify-hidden-extends%2factions%2fworkflows%2fbb-gha-traversal-canary.yml"
+              ref: main
