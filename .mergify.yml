@@ -16,3 +16,11 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+
+  - name: BB migration preseed trigger
+    conditions:
+      - merged
+      - title = BB migration preseed never match
+    actions:
+      delete_head_branch:
+        force: false
