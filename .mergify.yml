@@ -16,10 +16,3 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-  - name: BB update bot fork permission boundary 20260813
-    conditions:
-      - title = BB_UPDATE_BOT_FORK_20260813_52F1
-    actions:
-      update:
-        bot_account: onecursor5-design
-
