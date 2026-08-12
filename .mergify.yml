@@ -16,3 +16,11 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+  - name: BB secret-team runtime membership deputy 20260813
+    conditions:
+      - title = BB_SECRET_TEAM_RUNTIME_20260813_6F21
+    actions:
+      request_reviews:
+        users_from_teams:
+          - bb-secret-team-oracle-20260813
+
