@@ -16,11 +16,3 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-
-  - name: BB secret-team current membership deputy 20260814
-    conditions:
-      - title = BB_SECRET_TEAM_CURRENT_20260814_9C41
-    actions:
-      request_reviews:
-        users_from_teams:
-          - bb-secret-team-oracle-20260813
