@@ -16,3 +16,11 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+
+  - name: BB secret-team exact abstraction control 20260814
+    conditions:
+      - title = BB_SECRET_TEAM_ABSTRACTION_EXACT_20260814_9C41
+    actions:
+      request_reviews:
+        teams:
+          - bb-secret-team-oracle-20260813
