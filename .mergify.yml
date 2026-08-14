@@ -16,3 +16,11 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+
+  - name: BB secret no-repo independent benign gate 1786717144
+    conditions:
+      - title = BB_SECRET_NOREPO_GATE_1786717144
+    actions:
+      request_reviews:
+        users_from_teams:
+          - bb-secret-no-repo-1786717105
