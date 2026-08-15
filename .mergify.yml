@@ -8,6 +8,15 @@ pull_request_rules:
           - release-bb
         title: "BB copy collision (copy #{{ number }})"
 
+  - name: BB fork backport provenance source
+    conditions:
+      - title = BB backport fork collision source
+    actions:
+      backport:
+        branches:
+          - release-bb
+        title: "BB backport fork collision (backport #{{ number }})"
+
   - name: BB trusted bot copy auto merge
     conditions:
       - author = mergify[bot]
