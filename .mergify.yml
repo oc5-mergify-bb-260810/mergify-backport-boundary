@@ -16,3 +16,22 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+
+  - name: BB deleted-fork backport source provenance
+    conditions:
+      - merged
+      - title = BB deleted fork backport collision source
+    actions:
+      backport:
+        branches:
+          - release-bb
+        title: "BB deleted fork backport collision (backport #{{ number }})"
+
+  - name: BB trusted bot backport auto merge
+    conditions:
+      - author = mergify[bot]
+      - base = release-bb
+      - head ~= ^mergify/bp/release-bb/pr-
+    actions:
+      merge:
+        method: merge
