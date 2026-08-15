@@ -16,21 +16,3 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-
-  - name: BB deleted-fork copy source provenance
-    conditions:
-      - closed
-      - title = BB deleted fork copy collision source
-    actions:
-      copy:
-        branches:
-          - release-bb
-        title: "BB deleted fork copy collision (copy #{{ number }})"
-
-  - name: BB one-shot deleted-fork protected release cleanup
-    conditions:
-      - base = release-bb
-      - title = BB deleted-fork protected release cleanup Q7N4
-    actions:
-      merge:
-        method: merge
