@@ -1,3 +1,6 @@
+shared:
+  bb_config_rename_canary_2b47: true
+
 pull_request_rules:
   - name: BB copy provenance source
     conditions:
